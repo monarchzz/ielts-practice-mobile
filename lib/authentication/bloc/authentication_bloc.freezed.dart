@@ -355,8 +355,6 @@ abstract class $AuthenticationStateCopyWith<$Res> {
       _$AuthenticationStateCopyWithImpl<$Res, AuthenticationState>;
   @useResult
   $Res call({AuthenticationStatus status, User? user});
-
-  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -373,30 +371,18 @@ class _$AuthenticationStateCopyWithImpl<$Res, $Val extends AuthenticationState>
   @override
   $Res call({
     Object? status = null,
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AuthenticationStatus,
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
   }
 }
 
@@ -409,9 +395,6 @@ abstract class _$$_AuthenticationCopyWith<$Res>
   @override
   @useResult
   $Res call({AuthenticationStatus status, User? user});
-
-  @override
-  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -426,14 +409,14 @@ class __$$_AuthenticationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$_Authentication(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AuthenticationStatus,
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User?,
@@ -462,11 +445,12 @@ class _$_Authentication implements _Authentication {
         (other.runtimeType == runtimeType &&
             other is _$_Authentication &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, user);
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override

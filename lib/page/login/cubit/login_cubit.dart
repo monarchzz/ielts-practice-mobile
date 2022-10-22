@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:ielts_practice_mobile/common/di/get_it.dart';
 import 'package:ielts_practice_mobile/common/extension/navigator.dart';
-import 'package:ielts_practice_mobile/common/model/api_response.dart';
+import 'package:ielts_practice_mobile/model/api_response.dart';
 import 'package:ielts_practice_mobile/repository/authentication_repository/authentication_repository.dart';
 
 part 'login_state.dart';

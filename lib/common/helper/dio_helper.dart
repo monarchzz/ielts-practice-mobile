@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:ielts_practice_mobile/common/constant/authentication.dart';
+import 'package:ielts_practice_mobile/common/constant/token_ref.dart';
 import 'package:ielts_practice_mobile/repository/authentication_repository/authentication_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,24 +17,22 @@ class DioHelper {
   String token = '';
 
   Future<void> initApiClient() async {
-    token =
-        sharedPreferences.getString(AuthenticationConfig.accessTokenRefs) ?? '';
+    token = sharedPreferences.getString(TokenRef.accessTokenRefs) ?? '';
 
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
           options.headers['Authorization'] =
               // ignore: lines_longer_than_80_chars
-              'Bearer ${sharedPreferences.getString(AuthenticationConfig.accessTokenRefs) ?? ''}';
+              'Bearer ${sharedPreferences.getString(TokenRef.accessTokenRefs) ?? ''}';
           return handler.next(options);
         },
         onError: (error, handler) async {
           final origin = error.response;
 
           if (origin != null && origin.statusCode == 401) {
-            final refreshTokenData = sharedPreferences
-                    .getString(AuthenticationConfig.refreshTokenRefs) ??
-                '';
+            final refreshTokenData =
+                sharedPreferences.getString(TokenRef.refreshTokenRefs) ?? '';
             if (refreshTokenData.isNotEmpty) {
               try {
                 final data = await dio.post<dynamic>(
@@ -48,11 +46,11 @@ class DioHelper {
                 final refreshToken = data.data['refreshToken'] as String;
 
                 await sharedPreferences.setString(
-                  AuthenticationConfig.accessTokenRefs,
+                  TokenRef.accessTokenRefs,
                   accessToken,
                 );
                 await sharedPreferences.setString(
-                  AuthenticationConfig.refreshTokenRefs,
+                  TokenRef.refreshTokenRefs,
                   refreshToken,
                 );
                 token = accessToken;

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ielts_practice_mobile/common/model/user.dart';
+import 'package:ielts_practice_mobile/model/user.dart';
 import 'package:ielts_practice_mobile/repository/authentication_repository/authentication_repository.dart';
 import 'package:ielts_practice_mobile/repository/user_repository/user_repository.dart';
 

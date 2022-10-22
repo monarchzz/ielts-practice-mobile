@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:ielts_practice_mobile/authentication/model/authentication.dart';
-import 'package:ielts_practice_mobile/common/constant/authentication.dart';
 import 'package:ielts_practice_mobile/common/constant/network.dart';
-import 'package:ielts_practice_mobile/common/model/api_response.dart';
+import 'package:ielts_practice_mobile/common/constant/token_ref.dart';
+import 'package:ielts_practice_mobile/model/api_response.dart';
+import 'package:ielts_practice_mobile/model/authentication.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum AuthenticationStatus { unknown, authenticated, unauthenticated }
@@ -21,8 +21,7 @@ class AuthenticationRepository {
   final _controller = StreamController<AuthenticationStatus>.broadcast();
 
   Stream<AuthenticationStatus> get status async* {
-    if (_sharedPreferences.getString(AuthenticationConfig.accessTokenRefs) !=
-        null) {
+    if (_sharedPreferences.getString(TokenRef.accessTokenRefs) != null) {
       yield AuthenticationStatus.authenticated;
     } else {
       yield AuthenticationStatus.unauthenticated;
@@ -45,11 +44,11 @@ class AuthenticationRepository {
         final auth = Authentication.fromJson(result.data!);
 
         await _sharedPreferences.setString(
-          AuthenticationConfig.accessTokenRefs,
+          TokenRef.accessTokenRefs,
           auth.token,
         );
         await _sharedPreferences.setString(
-          AuthenticationConfig.refreshTokenRefs,
+          TokenRef.refreshTokenRefs,
           auth.refreshToken,
         );
 
@@ -68,11 +67,11 @@ class AuthenticationRepository {
   Future<void> logOut() async {
     _controller.add(AuthenticationStatus.unauthenticated);
     await _sharedPreferences.setString(
-      AuthenticationConfig.accessTokenRefs,
+      TokenRef.accessTokenRefs,
       '',
     );
     await _sharedPreferences.setString(
-      AuthenticationConfig.refreshTokenRefs,
+      TokenRef.refreshTokenRefs,
       '',
     );
   }

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:ielts_practice_mobile/common/constant/network.dart';
-import 'package:ielts_practice_mobile/common/model/user.dart';
+import 'package:ielts_practice_mobile/model/user.dart';
 
 class UserRepository {
   UserRepository({required Dio dio}) : _dio = dio {
