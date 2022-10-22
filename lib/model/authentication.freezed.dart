@@ -24,7 +24,7 @@ mixin _$Authentication {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String get refreshToken => throw _privateConstructorUsedError;
 
@@ -45,7 +45,7 @@ abstract class $AuthenticationCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
-      String phoneNumber,
+      Gender gender,
       String token,
       String refreshToken});
 }
@@ -67,7 +67,7 @@ class _$AuthenticationCopyWithImpl<$Res, $Val extends Authentication>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
-    Object? phoneNumber = null,
+    Object? gender = null,
     Object? token = null,
     Object? refreshToken = null,
   }) {
@@ -88,10 +88,10 @@ class _$AuthenticationCopyWithImpl<$Res, $Val extends Authentication>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -117,7 +117,7 @@ abstract class _$$_AuthenticationCopyWith<$Res>
       String firstName,
       String lastName,
       String email,
-      String phoneNumber,
+      Gender gender,
       String token,
       String refreshToken});
 }
@@ -137,7 +137,7 @@ class __$$_AuthenticationCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
-    Object? phoneNumber = null,
+    Object? gender = null,
     Object? token = null,
     Object? refreshToken = null,
   }) {
@@ -158,10 +158,10 @@ class __$$_AuthenticationCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -182,7 +182,7 @@ class _$_Authentication implements _Authentication {
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.phoneNumber,
+      required this.gender,
       required this.token,
       required this.refreshToken});
 
@@ -198,7 +198,7 @@ class _$_Authentication implements _Authentication {
   @override
   final String email;
   @override
-  final String phoneNumber;
+  final Gender gender;
   @override
   final String token;
   @override
@@ -206,7 +206,7 @@ class _$_Authentication implements _Authentication {
 
   @override
   String toString() {
-    return 'Authentication(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber, token: $token, refreshToken: $refreshToken)';
+    return 'Authentication(id: $id, firstName: $firstName, lastName: $lastName, email: $email, gender: $gender, token: $token, refreshToken: $refreshToken)';
   }
 
   @override
@@ -220,8 +220,7 @@ class _$_Authentication implements _Authentication {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.refreshToken, refreshToken) ||
                 other.refreshToken == refreshToken));
@@ -229,8 +228,8 @@ class _$_Authentication implements _Authentication {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, email,
-      phoneNumber, token, refreshToken);
+  int get hashCode => Object.hash(
+      runtimeType, id, firstName, lastName, email, gender, token, refreshToken);
 
   @JsonKey(ignore: true)
   @override
@@ -252,7 +251,7 @@ abstract class _Authentication implements Authentication {
       required final String firstName,
       required final String lastName,
       required final String email,
-      required final String phoneNumber,
+      required final Gender gender,
       required final String token,
       required final String refreshToken}) = _$_Authentication;
 
@@ -268,7 +267,7 @@ abstract class _Authentication implements Authentication {
   @override
   String get email;
   @override
-  String get phoneNumber;
+  Gender get gender;
   @override
   String get token;
   @override

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ielts_practice_mobile/model/enum/gender.dart';
 
 part 'authentication.freezed.dart';
 part 'authentication.g.dart';
@@ -10,7 +11,7 @@ class Authentication with _$Authentication {
     required String firstName,
     required String lastName,
     required String email,
-    required String phoneNumber,
+    required Gender gender,
     required String token,
     required String refreshToken,
   }) = _Authentication;

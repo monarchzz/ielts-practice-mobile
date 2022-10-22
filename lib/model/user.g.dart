@@ -11,7 +11,7 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       email: json['email'] as String,
-      phoneNumber: json['phoneNumber'] as String,
+      gender: $enumDecode(_$GenderEnumMap, json['gender']),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
@@ -19,5 +19,10 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,
-      'phoneNumber': instance.phoneNumber,
+      'gender': _$GenderEnumMap[instance.gender]!,
     };
+
+const _$GenderEnumMap = {
+  Gender.male: 'Male',
+  Gender.female: 'Male',
+};

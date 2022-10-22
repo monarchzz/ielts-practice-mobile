@@ -12,7 +12,7 @@ _$_Authentication _$$_AuthenticationFromJson(Map<String, dynamic> json) =>
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       email: json['email'] as String,
-      phoneNumber: json['phoneNumber'] as String,
+      gender: $enumDecode(_$GenderEnumMap, json['gender']),
       token: json['token'] as String,
       refreshToken: json['refreshToken'] as String,
     );
@@ -23,7 +23,12 @@ Map<String, dynamic> _$$_AuthenticationToJson(_$_Authentication instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,
-      'phoneNumber': instance.phoneNumber,
+      'gender': _$GenderEnumMap[instance.gender]!,
       'token': instance.token,
       'refreshToken': instance.refreshToken,
     };
+
+const _$GenderEnumMap = {
+  Gender.male: 'Male',
+  Gender.female: 'Male',
+};

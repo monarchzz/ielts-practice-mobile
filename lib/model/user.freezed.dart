@@ -24,7 +24,7 @@ mixin _$User {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +41,7 @@ abstract class $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
-      String phoneNumber});
+      Gender gender});
 }
 
 /// @nodoc
@@ -61,7 +61,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
-    Object? phoneNumber = null,
+    Object? gender = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,10 +80,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
     ) as $Val);
   }
 }
@@ -99,7 +99,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
-      String phoneNumber});
+      Gender gender});
 }
 
 /// @nodoc
@@ -115,7 +115,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
-    Object? phoneNumber = null,
+    Object? gender = null,
   }) {
     return _then(_$_User(
       id: null == id
@@ -134,10 +134,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
     ));
   }
 }
@@ -150,7 +150,7 @@ class _$_User implements _User {
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.phoneNumber});
+      required this.gender});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -163,11 +163,11 @@ class _$_User implements _User {
   @override
   final String email;
   @override
-  final String phoneNumber;
+  final Gender gender;
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, gender: $gender)';
   }
 
   @override
@@ -181,14 +181,13 @@ class _$_User implements _User {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            (identical(other.gender, gender) || other.gender == gender));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, email, phoneNumber);
+      Object.hash(runtimeType, id, firstName, lastName, email, gender);
 
   @JsonKey(ignore: true)
   @override
@@ -210,7 +209,7 @@ abstract class _User implements User {
       required final String firstName,
       required final String lastName,
       required final String email,
-      required final String phoneNumber}) = _$_User;
+      required final Gender gender}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -223,7 +222,7 @@ abstract class _User implements User {
   @override
   String get email;
   @override
-  String get phoneNumber;
+  Gender get gender;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

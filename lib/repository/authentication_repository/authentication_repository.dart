@@ -21,6 +21,7 @@ class AuthenticationRepository {
   final _controller = StreamController<AuthenticationStatus>.broadcast();
 
   Stream<AuthenticationStatus> get status async* {
+    yield AuthenticationStatus.unknown;
     if (_sharedPreferences.getString(TokenRef.accessTokenRefs) != null) {
       yield AuthenticationStatus.authenticated;
     } else {
