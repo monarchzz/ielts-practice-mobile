@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:ielts_practice_mobile/common/constant/network.dart';
 import 'package:ielts_practice_mobile/common/constant/token_ref.dart';
+import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/model/api_response.dart';
 import 'package:ielts_practice_mobile/model/authentication.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,6 +33,7 @@ class AuthenticationRepository {
   }
 
   Future<ApiResponse<bool>> login(String username, String password) async {
+    final l10n = await L10nUtil.l10n;
     try {
       final result = await _dio.post<Map<String, dynamic>>(
         '/auth/login',
@@ -61,7 +63,7 @@ class AuthenticationRepository {
 
       return const ApiError(message: 'Oops! Something went wrong.');
     } catch (e) {
-      return ApiResponse.error(message: e.toString());
+      return ApiResponse.error(message: l10n.authInCorrect);
     }
   }
 

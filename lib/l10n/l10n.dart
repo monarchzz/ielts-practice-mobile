@@ -13,3 +13,13 @@ export 'package:flutter_gen/gen_l10n/app_localizations.dart';
 extension AppLocalizationsX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this);
 }
+
+mixin L10nUtil {
+  static Future<AppLocalizations> get l10n {
+    final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+    final preferred = widgetsBinding.window.locales;
+    const supported = AppLocalizations.supportedLocales;
+    final locale = basicLocaleListResolution(preferred, supported);
+    return AppLocalizations.delegate.load(locale);
+  }
+}

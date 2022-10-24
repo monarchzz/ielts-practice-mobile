@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
-import 'package:ielts_practice_mobile/common/constant/app_text_stype.dart';
+import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 
 class FailureWidget extends StatelessWidget {
   const FailureWidget({super.key, this.message});

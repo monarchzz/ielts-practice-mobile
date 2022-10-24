@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
+import 'package:ielts_practice_mobile/common/widget/auth_text_form_field_widget.dart';
 import 'package:ielts_practice_mobile/common/widget/loading_dialog.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 
@@ -24,19 +25,19 @@ class _LoginFormState extends State<LoginForm> {
 
     return Form(
       key: _formKey,
-      autovalidateMode: AutovalidateMode.always,
-      onChanged: () {
-        setState(() {
-          Form.of(primaryFocus!.context!)!.save();
-        });
-      },
+      autovalidateMode: AutovalidateMode.disabled,
+      // onChanged: () {
+      //   setState(() {
+      //     Form.of(primaryFocus!.context!)!.save();
+      //   });
+      // },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          TextFormField(
-            decoration: InputDecoration(
-              border: const UnderlineInputBorder(),
-              labelText: l10n.username,
+          AuthTextFormFieldWidget(
+            hintText: l10n.username,
+            prefixIcon: const Icon(
+              Icons.email,
             ),
             onSaved: (String? newValue) {
               if (newValue != null) {
@@ -54,22 +55,22 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(
             height: AppSize.s8,
           ),
-          TextFormField(
-            decoration: InputDecoration(
-              border: const UnderlineInputBorder(),
-              labelText: l10n.password,
-              suffixIcon: _password.isNotEmpty
-                  ? IconButton(
-                      onPressed: () => setState(() {
-                        _passwordVisible = !_passwordVisible;
-                      }),
-                      icon: Icon(
-                        _passwordVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                      ),
-                    )
-                  : null,
+          AuthTextFormFieldWidget(
+            hintText: l10n.password,
+            suffixIcon: _password.isNotEmpty
+                ? IconButton(
+                    onPressed: () => setState(() {
+                      _passwordVisible = !_passwordVisible;
+                    }),
+                    icon: Icon(
+                      _passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                    ),
+                  )
+                : null,
+            prefixIcon: const Icon(
+              Icons.lock,
             ),
             obscureText: !_passwordVisible,
             onSaved: (String? newValue) {
@@ -79,24 +80,24 @@ class _LoginFormState extends State<LoginForm> {
             },
             validator: (String? value) {
               if (value != null && value.isEmpty) {
-                return l10n.usernameEmpty;
+                return l10n.passwordEmpty;
               }
 
               return null;
             },
           ),
-          const SizedBox(
-            height: AppSize.s8,
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 8,
           ),
           SizedBox(
-            width: 200,
+            width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                showDialog<String>(
-                  context: context,
-                  builder: (_) => const LoadingDialog(),
-                );
                 if (_formKey.currentState!.validate()) {
+                  showDialog<String>(
+                    context: context,
+                    builder: (_) => const LoadingDialog(),
+                  );
                   widget.onSubmit(_username, _password);
                 }
               },
