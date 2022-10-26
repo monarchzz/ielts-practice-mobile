@@ -26,11 +26,11 @@ class _LoginFormState extends State<LoginForm> {
     return Form(
       key: _formKey,
       autovalidateMode: AutovalidateMode.disabled,
-      // onChanged: () {
-      //   setState(() {
-      //     Form.of(primaryFocus!.context!)!.save();
-      //   });
-      // },
+      onChanged: () {
+        setState(() {
+          Form.of(primaryFocus!.context!)!.save();
+        });
+      },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -94,10 +94,6 @@ class _LoginFormState extends State<LoginForm> {
             child: ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  showDialog<String>(
-                    context: context,
-                    builder: (_) => const LoadingDialog(),
-                  );
                   widget.onSubmit(_username, _password);
                 }
               },

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ielts_practice_mobile/app/di.dart';
 import 'package:ielts_practice_mobile/app/observer.dart';
 import 'package:ielts_practice_mobile/app/route.dart';
 import 'package:ielts_practice_mobile/app/theme.dart';
 import 'package:ielts_practice_mobile/authentication/bloc/authentication_bloc.dart';
-import 'package:ielts_practice_mobile/common/di/get_it.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/repository/authentication_repository/authentication_repository.dart';
 import 'package:ielts_practice_mobile/repository/user_repository/user_repository.dart';

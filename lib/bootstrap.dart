@@ -10,7 +10,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ielts_practice_mobile/common/di/get_it.dart';
+import 'package:ielts_practice_mobile/app/di.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override

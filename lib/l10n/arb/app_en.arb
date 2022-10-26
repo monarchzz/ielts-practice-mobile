@@ -16,7 +16,7 @@
   "loginTitle": "Hello. Welcome Back",
   "usernameEmpty": "User name is not empty",
   "passwordEmpty": "Password is not empty",
-  "loginAlert": "Alert",
+  "alert": "Alert",
   "account": "Don't have an account?",
   "registerNow": "Register Now"
 }
