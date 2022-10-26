@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
 import 'package:ielts_practice_mobile/common/widget/auth_text_form_field_widget.dart';
-import 'package:ielts_practice_mobile/common/widget/loading_dialog.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 
 class LoginForm extends StatefulWidget {
@@ -64,8 +63,8 @@ class _LoginFormState extends State<LoginForm> {
                     }),
                     icon: Icon(
                       _passwordVisible
-                          ? Icons.visibility
-                          : Icons.visibility_off,
+                          ? Icons.visibility_off
+                          : Icons.visibility,
                     ),
                   )
                 : null,

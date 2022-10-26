@@ -25,10 +25,9 @@ class LoginCubit extends Cubit<LoginState> {
     final loginResponse =
         await _authenticationRepository.login(username, password);
 
-    // remove loading dialog
-    getIt.navigator.pop();
-
     if (loginResponse is ApiError) {
+      // remove loading dialog
+      getIt.navigator.pop();
       emit(LoginState(message: (loginResponse as ApiError).message));
       emit(const LoginState());
     }

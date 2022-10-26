@@ -24,5 +24,5 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
 
 const _$GenderEnumMap = {
   Gender.male: 'Male',
-  Gender.female: 'Male',
+  Gender.female: 'Female',
 };

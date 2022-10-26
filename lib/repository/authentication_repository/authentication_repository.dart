@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:ielts_practice_mobile/common/constant/network.dart';
 import 'package:ielts_practice_mobile/common/constant/token_ref.dart';
+import 'package:ielts_practice_mobile/common/extension.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/model/api_response.dart';
 import 'package:ielts_practice_mobile/model/authentication.dart';
+import 'package:ielts_practice_mobile/model/enum/gender.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum AuthenticationStatus { unknown, authenticated, unauthenticated }
@@ -62,9 +64,51 @@ class AuthenticationRepository {
       }
 
       return const ApiError(message: 'Oops! Something went wrong.');
-    } on DioError catch (e) {
-      print(e);
+    } on DioError catch (_) {
       return ApiResponse.error(message: l10n.authInCorrect);
+    }
+  }
+
+  Future<ApiResponse<String>> signUp({
+    required String firstName,
+    required String lastName,
+    required String email,
+    required Gender gender,
+    required String password,
+  }) async {
+    try {
+      final result = await _dio.post<Map<String, dynamic>>(
+        '/auth/register',
+        data: {
+          'firstName': firstName,
+          'lastName': lastName,
+          'email': email,
+          'password': password,
+          'gender': gender.name
+        },
+      );
+
+      if (result.data != null && result.statusCode == StatusCodes.status200OK) {
+        final auth = Authentication.fromJson(result.data!);
+
+        await _sharedPreferences.setString(
+          TokenRef.accessTokenRefs,
+          auth.token,
+        );
+        await _sharedPreferences.setString(
+          TokenRef.refreshTokenRefs,
+          auth.refreshToken,
+        );
+
+        // update auth status
+        _controller.add(AuthenticationStatus.authenticated);
+
+        return const ApiResponse.success('');
+      }
+
+      return const ApiError(message: 'Oops! Something went wrong.');
+    } on DioError catch (e) {
+      return e.toResponseError();
     }
   }
 

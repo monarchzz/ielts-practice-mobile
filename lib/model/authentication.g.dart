@@ -30,5 +30,5 @@ Map<String, dynamic> _$$_AuthenticationToJson(_$_Authentication instance) =>
 
 const _$GenderEnumMap = {
   Gender.male: 'Male',
-  Gender.female: 'Male',
+  Gender.female: 'Female',
 };

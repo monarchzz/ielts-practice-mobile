@@ -45,4 +45,10 @@ extension ValidationX on String {
     final exp = RegExp(r'^\d+$');
     return exp.hasMatch(this);
   }
+
+  bool isEmail() {
+    if (isEmpty) return false;
+    final exp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    return exp.hasMatch(this);
+  }
 }

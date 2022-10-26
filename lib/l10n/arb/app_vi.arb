@@ -16,7 +16,19 @@
   "loginTitle": "Hello. Welcome Back",
   "usernameEmpty": "User name is not empty",
   "passwordEmpty": "Password is not empty",
+  "passwordInvalid": "Password is not invalid",
   "alert": "Alert",
   "account": "Don't have an account?",
-  "registerNow": "Register Now"
+  "signUpNow": "Sign Up Now",
+  "signUpTitle": "Sign Up",
+  "signUp": "Sign Up",
+  "confirmPassword": "Confirm Password",
+  "lastName": "Last Name",
+  "firstName": "First Name",
+  "email": "Email",
+  "gender": "Gender",
+  "firstNameEmpty": "First name is not empty",
+  "lastNameEmpty": "Last name is not empty",
+  "emailInvalid": "Email is invalid",
+  "confirmPasswordNotMatch": "Confirm password is not match"
 }

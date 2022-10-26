@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ielts_practice_mobile/app/di.dart';
+import 'package:ielts_practice_mobile/app/route.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
 import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
+import 'package:ielts_practice_mobile/common/extension.dart';
 import 'package:ielts_practice_mobile/common/util.dart';
 import 'package:ielts_practice_mobile/common/widget/page_container.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
@@ -15,7 +18,10 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    void handleRegisterCallback() {}
+    void handleRegisterCallback() {
+      getIt.navigator.pushNamed(RouteName.signUp);
+    }
+
     Future<void> handleLoginSubmitCallback(
       String username,
       String password,
@@ -58,7 +64,7 @@ class LoginView extends StatelessWidget {
                       TextButton(
                         onPressed: handleRegisterCallback,
                         child: Text(
-                          l10n.registerNow,
+                          l10n.signUpNow,
                           style: const TextStyle(color: Colors.blue),
                         ),
                       )
