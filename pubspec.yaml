@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.1.0+1
-  json_serializable: ^6.5.1
+  json_serializable: ^6.5.4
   mocktail: ^0.3.0
   very_good_analysis: ^3.1.0
 
