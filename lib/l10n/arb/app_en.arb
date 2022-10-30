@@ -27,8 +27,13 @@
   "firstName": "First Name",
   "email": "Email",
   "gender": "Gender",
+  "dateOfBirth": "Date Of Birth",
   "firstNameEmpty": "First name is not empty",
   "lastNameEmpty": "Last name is not empty",
   "emailInvalid": "Email is invalid",
-  "confirmPasswordNotMatch": "Confirm password is not match"
+  "confirmPasswordNotMatch": "Confirm password is not match",
+  "home": "Home",
+  "studyProgramme": "Study Programme",
+  "library": "Library",
+  "setting": "Setting"
 }

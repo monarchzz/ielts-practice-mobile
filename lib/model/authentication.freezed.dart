@@ -21,10 +21,8 @@ Authentication _$AuthenticationFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Authentication {
   String get id => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String get refreshToken => throw _privateConstructorUsedError;
 
@@ -42,10 +40,8 @@ abstract class $AuthenticationCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String firstName,
-      String lastName,
       String email,
-      Gender gender,
+      bool isActive,
       String token,
       String refreshToken});
 }
@@ -64,10 +60,8 @@ class _$AuthenticationCopyWithImpl<$Res, $Val extends Authentication>
   @override
   $Res call({
     Object? id = null,
-    Object? firstName = null,
-    Object? lastName = null,
     Object? email = null,
-    Object? gender = null,
+    Object? isActive = null,
     Object? token = null,
     Object? refreshToken = null,
   }) {
@@ -76,22 +70,14 @@ class _$AuthenticationCopyWithImpl<$Res, $Val extends Authentication>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -114,10 +100,8 @@ abstract class _$$_AuthenticationCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String firstName,
-      String lastName,
       String email,
-      Gender gender,
+      bool isActive,
       String token,
       String refreshToken});
 }
@@ -134,10 +118,8 @@ class __$$_AuthenticationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? firstName = null,
-    Object? lastName = null,
     Object? email = null,
-    Object? gender = null,
+    Object? isActive = null,
     Object? token = null,
     Object? refreshToken = null,
   }) {
@@ -146,22 +128,14 @@ class __$$_AuthenticationCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -179,10 +153,8 @@ class __$$_AuthenticationCopyWithImpl<$Res>
 class _$_Authentication implements _Authentication {
   _$_Authentication(
       {required this.id,
-      required this.firstName,
-      required this.lastName,
       required this.email,
-      required this.gender,
+      required this.isActive,
       required this.token,
       required this.refreshToken});
 
@@ -192,13 +164,9 @@ class _$_Authentication implements _Authentication {
   @override
   final String id;
   @override
-  final String firstName;
-  @override
-  final String lastName;
-  @override
   final String email;
   @override
-  final Gender gender;
+  final bool isActive;
   @override
   final String token;
   @override
@@ -206,7 +174,7 @@ class _$_Authentication implements _Authentication {
 
   @override
   String toString() {
-    return 'Authentication(id: $id, firstName: $firstName, lastName: $lastName, email: $email, gender: $gender, token: $token, refreshToken: $refreshToken)';
+    return 'Authentication(id: $id, email: $email, isActive: $isActive, token: $token, refreshToken: $refreshToken)';
   }
 
   @override
@@ -215,12 +183,9 @@ class _$_Authentication implements _Authentication {
         (other.runtimeType == runtimeType &&
             other is _$_Authentication &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.refreshToken, refreshToken) ||
                 other.refreshToken == refreshToken));
@@ -228,8 +193,8 @@ class _$_Authentication implements _Authentication {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, firstName, lastName, email, gender, token, refreshToken);
+  int get hashCode =>
+      Object.hash(runtimeType, id, email, isActive, token, refreshToken);
 
   @JsonKey(ignore: true)
   @override
@@ -248,10 +213,8 @@ class _$_Authentication implements _Authentication {
 abstract class _Authentication implements Authentication {
   factory _Authentication(
       {required final String id,
-      required final String firstName,
-      required final String lastName,
       required final String email,
-      required final Gender gender,
+      required final bool isActive,
       required final String token,
       required final String refreshToken}) = _$_Authentication;
 
@@ -261,13 +224,9 @@ abstract class _Authentication implements Authentication {
   @override
   String get id;
   @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
   String get email;
   @override
-  Gender get gender;
+  bool get isActive;
   @override
   String get token;
   @override

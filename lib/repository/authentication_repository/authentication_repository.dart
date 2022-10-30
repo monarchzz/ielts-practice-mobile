@@ -38,7 +38,7 @@ class AuthenticationRepository {
     final l10n = await L10nUtil.l10n;
     try {
       final result = await _dio.post<Map<String, dynamic>>(
-        '/auth/login',
+        '/auth/users/login',
         data: {
           'username': username,
           'password': password,
@@ -75,16 +75,18 @@ class AuthenticationRepository {
     required String email,
     required Gender gender,
     required String password,
+    required DateTime dateOfBirth,
   }) async {
     try {
       final result = await _dio.post<Map<String, dynamic>>(
-        '/auth/register',
+        '/auth/users/register',
         data: {
           'firstName': firstName,
           'lastName': lastName,
           'email': email,
           'password': password,
-          'gender': gender.name
+          'gender': gender.name,
+          'dateOfBirth': dateOfBirth.toIso8601String()
         },
       );
 

@@ -39,11 +39,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       email: event.email,
       gender: event.gender,
       password: event.password,
+      dateOfBirth: event.dateOfBirth,
     );
 
+    getIt.navigator.pop();
     if (result is ApiError) {
       // remove loading dialog
-      getIt.navigator.pop();
+
       emit(SignUpState(errorMessage: (result as ApiError).message));
       emit(const SignUpState());
     }

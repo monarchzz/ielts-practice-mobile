@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 mixin AppColor {
-  static const primary = Color(0xFF685BC7);
+  static const primary = Color(0xFF635BFF);
   static const onPrimary = Color(0xFFFFFCFC);
   static const red = Color(0xFFD43860);
   static const gold = Color(0xFFFFCA51);

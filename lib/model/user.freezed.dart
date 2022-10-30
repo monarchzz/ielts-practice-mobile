@@ -25,6 +25,9 @@ mixin _$User {
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   Gender get gender => throw _privateConstructorUsedError;
+  DateTime get dateOfBirth => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
+  Attachment? get avatar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +44,12 @@ abstract class $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
-      Gender gender});
+      Gender gender,
+      DateTime dateOfBirth,
+      bool isActive,
+      Attachment? avatar});
+
+  $AttachmentCopyWith<$Res>? get avatar;
 }
 
 /// @nodoc
@@ -62,6 +70,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? lastName = null,
     Object? email = null,
     Object? gender = null,
+    Object? dateOfBirth = null,
+    Object? isActive = null,
+    Object? avatar = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -84,7 +95,31 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
+      dateOfBirth: null == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as Attachment?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AttachmentCopyWith<$Res>? get avatar {
+    if (_value.avatar == null) {
+      return null;
+    }
+
+    return $AttachmentCopyWith<$Res>(_value.avatar!, (value) {
+      return _then(_value.copyWith(avatar: value) as $Val);
+    });
   }
 }
 
@@ -99,7 +134,13 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
-      Gender gender});
+      Gender gender,
+      DateTime dateOfBirth,
+      bool isActive,
+      Attachment? avatar});
+
+  @override
+  $AttachmentCopyWith<$Res>? get avatar;
 }
 
 /// @nodoc
@@ -116,6 +157,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? lastName = null,
     Object? email = null,
     Object? gender = null,
+    Object? dateOfBirth = null,
+    Object? isActive = null,
+    Object? avatar = freezed,
   }) {
     return _then(_$_User(
       id: null == id
@@ -138,6 +182,18 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
+      dateOfBirth: null == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      avatar: freezed == avatar
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as Attachment?,
     ));
   }
 }
@@ -150,7 +206,10 @@ class _$_User implements _User {
       required this.firstName,
       required this.lastName,
       required this.email,
-      required this.gender});
+      required this.gender,
+      required this.dateOfBirth,
+      required this.isActive,
+      this.avatar});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -164,10 +223,16 @@ class _$_User implements _User {
   final String email;
   @override
   final Gender gender;
+  @override
+  final DateTime dateOfBirth;
+  @override
+  final bool isActive;
+  @override
+  final Attachment? avatar;
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, gender: $gender)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, gender: $gender, dateOfBirth: $dateOfBirth, isActive: $isActive, avatar: $avatar)';
   }
 
   @override
@@ -181,13 +246,18 @@ class _$_User implements _User {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.gender, gender) || other.gender == gender));
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.dateOfBirth, dateOfBirth) ||
+                other.dateOfBirth == dateOfBirth) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, email, gender);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, email,
+      gender, dateOfBirth, isActive, avatar);
 
   @JsonKey(ignore: true)
   @override
@@ -209,7 +279,10 @@ abstract class _User implements User {
       required final String firstName,
       required final String lastName,
       required final String email,
-      required final Gender gender}) = _$_User;
+      required final Gender gender,
+      required final DateTime dateOfBirth,
+      required final bool isActive,
+      final Attachment? avatar}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -223,6 +296,12 @@ abstract class _User implements User {
   String get email;
   @override
   Gender get gender;
+  @override
+  DateTime get dateOfBirth;
+  @override
+  bool get isActive;
+  @override
+  Attachment? get avatar;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

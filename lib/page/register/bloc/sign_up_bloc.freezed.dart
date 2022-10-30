@@ -20,7 +20,7 @@ mixin _$SignUpEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)
+            String password, Gender gender, DateTime dateOfBirth)
         submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SignUpEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SignUpEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)
+            String password, Gender gender, DateTime dateOfBirth)
         submitted,
   }) {
     return started();
@@ -130,7 +130,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
   }) {
     return started?.call();
@@ -141,7 +141,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
     required TResult orElse(),
   }) {
@@ -198,7 +198,8 @@ abstract class _$$_SubmittedCopyWith<$Res> {
       String firstName,
       String lastName,
       String password,
-      Gender gender});
+      Gender gender,
+      DateTime dateOfBirth});
 }
 
 /// @nodoc
@@ -217,6 +218,7 @@ class __$$_SubmittedCopyWithImpl<$Res>
     Object? lastName = null,
     Object? password = null,
     Object? gender = null,
+    Object? dateOfBirth = null,
   }) {
     return _then(_$_Submitted(
       null == email
@@ -239,6 +241,10 @@ class __$$_SubmittedCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
+      null == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -246,8 +252,8 @@ class __$$_SubmittedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Submitted implements _Submitted {
-  const _$_Submitted(
-      this.email, this.firstName, this.lastName, this.password, this.gender);
+  const _$_Submitted(this.email, this.firstName, this.lastName, this.password,
+      this.gender, this.dateOfBirth);
 
   @override
   final String email;
@@ -259,10 +265,12 @@ class _$_Submitted implements _Submitted {
   final String password;
   @override
   final Gender gender;
+  @override
+  final DateTime dateOfBirth;
 
   @override
   String toString() {
-    return 'SignUpEvent.submitted(email: $email, firstName: $firstName, lastName: $lastName, password: $password, gender: $gender)';
+    return 'SignUpEvent.submitted(email: $email, firstName: $firstName, lastName: $lastName, password: $password, gender: $gender, dateOfBirth: $dateOfBirth)';
   }
 
   @override
@@ -277,12 +285,14 @@ class _$_Submitted implements _Submitted {
                 other.lastName == lastName) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.gender, gender) || other.gender == gender));
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.dateOfBirth, dateOfBirth) ||
+                other.dateOfBirth == dateOfBirth));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, firstName, lastName, password, gender);
+  int get hashCode => Object.hash(
+      runtimeType, email, firstName, lastName, password, gender, dateOfBirth);
 
   @JsonKey(ignore: true)
   @override
@@ -295,10 +305,10 @@ class _$_Submitted implements _Submitted {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)
+            String password, Gender gender, DateTime dateOfBirth)
         submitted,
   }) {
-    return submitted(email, firstName, lastName, password, gender);
+    return submitted(email, firstName, lastName, password, gender, dateOfBirth);
   }
 
   @override
@@ -306,10 +316,11 @@ class _$_Submitted implements _Submitted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
   }) {
-    return submitted?.call(email, firstName, lastName, password, gender);
+    return submitted?.call(
+        email, firstName, lastName, password, gender, dateOfBirth);
   }
 
   @override
@@ -317,12 +328,13 @@ class _$_Submitted implements _Submitted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(String email, String firstName, String lastName,
-            String password, Gender gender)?
+            String password, Gender gender, DateTime dateOfBirth)?
         submitted,
     required TResult orElse(),
   }) {
     if (submitted != null) {
-      return submitted(email, firstName, lastName, password, gender);
+      return submitted(
+          email, firstName, lastName, password, gender, dateOfBirth);
     }
     return orElse();
   }
@@ -365,13 +377,15 @@ abstract class _Submitted implements SignUpEvent {
       final String firstName,
       final String lastName,
       final String password,
-      final Gender gender) = _$_Submitted;
+      final Gender gender,
+      final DateTime dateOfBirth) = _$_Submitted;
 
   String get email;
   String get firstName;
   String get lastName;
   String get password;
   Gender get gender;
+  DateTime get dateOfBirth;
   @JsonKey(ignore: true)
   _$$_SubmittedCopyWith<_$_Submitted> get copyWith =>
       throw _privateConstructorUsedError;

@@ -25,6 +25,7 @@ class DioHelper {
           options.headers['Authorization'] =
               // ignore: lines_longer_than_80_chars
               'Bearer ${sharedPreferences.getString(TokenRef.accessTokenRefs) ?? ''}';
+
           return handler.next(options);
         },
         onError: (error, handler) async {
@@ -36,7 +37,7 @@ class DioHelper {
             if (refreshTokenData.isNotEmpty) {
               try {
                 final data = await dio.post<dynamic>(
-                  '/auth/refresh-token',
+                  '/auth/users/refresh-token',
                   data: {'refreshToken': refreshTokenData},
                 );
 

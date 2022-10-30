@@ -10,6 +10,7 @@ import 'package:ielts_practice_mobile/common/widget/page_container.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/model/enum/gender.dart';
 import 'package:ielts_practice_mobile/page/register/bloc/sign_up_bloc.dart';
+import 'package:intl/intl.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -28,8 +29,10 @@ class _SignUpViewState extends State<SignUpView> {
   String _lastName = '';
   bool _passwordVisible = false;
   bool _confirmPasswordVisible = false;
+  DateTime _dateOfBirth = DateTime.now();
 
   void _handleSignUpCallback() {
+    FocusScope.of(context).unfocus();
     context.read<SignUpBloc>().add(
           SignUpEvent.submitted(
             _email,
@@ -37,8 +40,24 @@ class _SignUpViewState extends State<SignUpView> {
             _lastName,
             _password,
             _gender,
+            _dateOfBirth,
           ),
         );
+  }
+
+  Future<void> _handleDateOfBirthCallback() async {
+    FocusScope.of(context).unfocus();
+
+    final date = await showDatePicker(
+      context: context,
+      initialDate: _dateOfBirth,
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    setState(() {
+      _dateOfBirth = date ?? _dateOfBirth;
+    });
   }
 
   @override
@@ -132,7 +151,7 @@ class _SignUpViewState extends State<SignUpView> {
                             color: AppColor.dimGray,
                           ),
                           Text(
-                            'Gender',
+                            l10n.gender,
                             style: AppTextStyle.j16.copyWith(
                               color: AppColor.dimGray,
                             ),
@@ -163,6 +182,46 @@ class _SignUpViewState extends State<SignUpView> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: AppSize.s6,
+                  ),
+                  GestureDetector(
+                    onTap: _handleDateOfBirthCallback,
+                    child: SizedBox(
+                      height: 60,
+                      child: InputDecorator(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AppSize.s4),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.event_outlined,
+                              color: AppColor.dimGray,
+                            ),
+                            const SizedBox(width: AppSize.s5),
+                            Text(
+                              l10n.dateOfBirth,
+                              style: AppTextStyle.j16.copyWith(
+                                color: AppColor.dimGray,
+                              ),
+                            ),
+                            const Spacer(),
+                            Text(
+                              DateFormat.yMMMMd(Intl.getCurrentLocale())
+                                  .format(_dateOfBirth),
+                              style: AppTextStyle.j14,
+                            ),
+                            const SizedBox(
+                              width: AppSize.s2,
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -1,2 +1,2 @@
-typedef DioResponse = Map<String, dynamic>;
-typedef DioListResponse = List<dynamic>;
+typedef ObjectResponse = Map<String, dynamic>;
+typedef ListResponse = List<dynamic>;

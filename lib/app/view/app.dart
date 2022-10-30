@@ -61,7 +61,7 @@ class _AppViewState extends State<AppView> {
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator.pushNamedAndRemoveUntil(
-                  RouteName.home,
+                  RouteName.bottomNavigation,
                   (route) => false,
                 );
 

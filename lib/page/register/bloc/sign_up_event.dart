@@ -9,5 +9,6 @@ class SignUpEvent with _$SignUpEvent {
     String lastName,
     String password,
     Gender gender,
+    DateTime dateOfBirth,
   ) = _Submitted;
 }

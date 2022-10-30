@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ielts_practice_mobile/model/attachment.dart';
 import 'package:ielts_practice_mobile/model/enum/gender.dart';
 
 part 'user.freezed.dart';
@@ -12,6 +13,9 @@ class User with _$User {
     required String lastName,
     required String email,
     required Gender gender,
+    required DateTime dateOfBirth,
+    required bool isActive,
+    Attachment? avatar,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

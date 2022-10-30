@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ielts_practice_mobile/model/enum/gender.dart';
 
 part 'authentication.freezed.dart';
 part 'authentication.g.dart';
@@ -8,10 +7,8 @@ part 'authentication.g.dart';
 class Authentication with _$Authentication {
   factory Authentication({
     required String id,
-    required String firstName,
-    required String lastName,
     required String email,
-    required Gender gender,
+    required bool isActive,
     required String token,
     required String refreshToken,
   }) = _Authentication;
