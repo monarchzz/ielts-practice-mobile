@@ -81,6 +81,12 @@ mixin AppTextStyle {
     color: AppColor.white,
   );
 
+  static const w19 = TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.w500,
+    color: AppColor.white,
+  );
+
   static const w24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,

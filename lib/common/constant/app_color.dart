@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 mixin AppColor {
-  static const primary = Color(0xFF635BFF);
+  static const primary = Color(0xFF653591);
   static const onPrimary = Color(0xFFFFFCFC);
   static const red = Color(0xFFD43860);
   static const gold = Color(0xFFFFCA51);
-  static const background = Color(0xFFF5F7FC);
+  static const background = Color(0xFFfbfbfb);
   // Complementary
   static const ochre = Color(0xFFE39F48);
   static const cream = Color(0xFFFCF4B2);
@@ -17,6 +17,7 @@ mixin AppColor {
   static const periwinkle = Color(0xFFE8E6FF);
   static const cerulean = Color(0xFF217AB7);
   static const babyBlue = Color(0xFFC4F0FF);
+  static const orange = Color(0xFFfe6c35);
   // Monochrome
   static const black = Color(0xFF000000);
   static const jetBlack = Color(0xFF343434);

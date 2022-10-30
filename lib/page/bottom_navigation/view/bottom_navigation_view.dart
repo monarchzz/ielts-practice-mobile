@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ielts_practice_mobile/common/constant/app_color.dart';
 import 'package:ielts_practice_mobile/common/widget/failure_widget.dart';
 import 'package:ielts_practice_mobile/common/widget/loading_dialog.dart';
-import 'package:ielts_practice_mobile/common/widget/page_container.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/page/bottom_navigation/bloc/bottom_navigation_bloc.dart';
 import 'package:ielts_practice_mobile/page/home/home.dart';
@@ -37,55 +36,54 @@ class BottomNavigationView extends StatelessWidget {
 
         final l10n = context.l10n;
 
-        return SafeArea(
-          child: Scaffold(
-            body: PageContainer(
-              child: state.map(
-                initial: (_) => const LoadingDialog(),
-                loading: (_) => const LoadingDialog(),
-                success: (value) => currentIndex == null
-                    ? Container()
-                    : _viewItems[currentIndex],
-                failure: (value) => FailureWidget(
-                  message: value.message,
-                ),
+        return Scaffold(
+          backgroundColor: AppColor.background,
+          body: SafeArea(
+            child: state.map(
+              initial: (_) => const LoadingDialog(),
+              loading: (_) => const LoadingDialog(),
+              success: (value) =>
+                  currentIndex == null ? Container() : _viewItems[currentIndex],
+              failure: (value) => FailureWidget(
+                message: value.message,
               ),
             ),
-            bottomNavigationBar: currentIndex == null
-                ? null
-                : BottomNavigationBar(
-                    items: [
-                      BottomNavigationBarItem(
-                        icon: const Icon(
-                          Icons.home,
-                        ),
-                        label: l10n.home,
-                      ),
-                      BottomNavigationBarItem(
-                        icon: const Icon(
-                          Icons.menu_book_outlined,
-                        ),
-                        label: l10n.studyProgramme,
-                      ),
-                      BottomNavigationBarItem(
-                        icon: const Icon(
-                          Icons.library_books_outlined,
-                        ),
-                        label: l10n.library,
-                      ),
-                      BottomNavigationBarItem(
-                        icon: const Icon(
-                          Icons.settings_outlined,
-                        ),
-                        label: l10n.setting,
-                      ),
-                    ],
-                    currentIndex: currentIndex,
-                    selectedItemColor: AppColor.primary,
-                    unselectedItemColor: AppColor.silver,
-                    onTap: handleItemTappedCallback,
-                  ),
           ),
+          bottomNavigationBar: currentIndex == null
+              ? null
+              : BottomNavigationBar(
+                  backgroundColor: AppColor.background,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: const Icon(
+                        Icons.home,
+                      ),
+                      label: l10n.home,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(
+                        Icons.menu_book_outlined,
+                      ),
+                      label: l10n.studyProgramme,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(
+                        Icons.library_books_outlined,
+                      ),
+                      label: l10n.library,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(
+                        Icons.settings_outlined,
+                      ),
+                      label: l10n.setting,
+                    ),
+                  ],
+                  currentIndex: currentIndex,
+                  selectedItemColor: AppColor.primary,
+                  unselectedItemColor: AppColor.silver,
+                  onTap: handleItemTappedCallback,
+                ),
         );
       },
     );

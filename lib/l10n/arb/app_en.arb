@@ -35,5 +35,32 @@
   "home": "Home",
   "studyProgramme": "Study Programme",
   "library": "Library",
-  "setting": "Setting"
+  "setting": "Setting",
+  "speaking": "Speaking",
+  "listening": "Listening",
+  "trainingCardTitle": "Your study programme",
+  "trainingCardDescription": "You'll soon know the {name} inside out!",
+  "@trainingCardDescription": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "continueTitle": "Continue",
+  "welcome": "Welcome!",
+  "allYourActivity": "All your activity",
+  "totalTime": "Total time",
+  "activities": "Activities",
+  "average": "Average",
+  "yourRecentActivity": "Your recent activity",
+  "averageSession": "Average session",
+  "daySteak": "{day} day streak!",
+  "@daySteak": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  }
 }
