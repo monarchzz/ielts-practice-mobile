@@ -62,5 +62,13 @@
         "type": "String"
       }
     }
-  }
+  },
+  "studyProgrammeTitle": "Your study programmes",
+  "studyProgrammeDescription": "Resume one of your study programmes or begin a new study programme",
+  "activeStudyProgramme": "Your active study programmes",
+  "newStudyProgramme": "New",
+  "newStudyProgrammeTitle": "Create a new study programme",
+  "newStudyProgrammeDescription": "Set your goals and we'll help you achieve them",
+  "allStudyProgramme": "All study programmes",
+  "replay": "Replay"
 }

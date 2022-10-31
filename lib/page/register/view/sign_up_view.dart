@@ -31,7 +31,7 @@ class _SignUpViewState extends State<SignUpView> {
   bool _confirmPasswordVisible = false;
   DateTime _dateOfBirth = DateTime.now();
 
-  void _handleSignUpCallback() {
+  void _handleSignUp() {
     FocusScope.of(context).unfocus();
     context.read<SignUpBloc>().add(
           SignUpEvent.submitted(
@@ -45,7 +45,7 @@ class _SignUpViewState extends State<SignUpView> {
         );
   }
 
-  Future<void> _handleDateOfBirthCallback() async {
+  Future<void> _handleDateOfBirth() async {
     FocusScope.of(context).unfocus();
 
     final date = await showDatePicker(
@@ -189,7 +189,7 @@ class _SignUpViewState extends State<SignUpView> {
                     height: AppSize.s6,
                   ),
                   GestureDetector(
-                    onTap: _handleDateOfBirthCallback,
+                    onTap: _handleDateOfBirth,
                     child: SizedBox(
                       height: 60,
                       child: InputDecorator(
@@ -329,7 +329,7 @@ class _SignUpViewState extends State<SignUpView> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          _handleSignUpCallback();
+                          _handleSignUp();
                         }
                       },
                       child: Text(

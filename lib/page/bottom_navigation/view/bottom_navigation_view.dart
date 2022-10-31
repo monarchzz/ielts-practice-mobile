@@ -20,14 +20,14 @@ class BottomNavigationView extends StatelessWidget {
     const SettingPage()
   ];
 
+  void _handleItemTapped(int index, BuildContext context) {
+    context
+        .read<BottomNavigationBloc>()
+        .add(BottomNavigationEvent.bottomNavigationIndexChanged(index));
+  }
+
   @override
   Widget build(BuildContext context) {
-    void handleItemTappedCallback(int index) {
-      context
-          .read<BottomNavigationBloc>()
-          .add(BottomNavigationEvent.bottomNavigationIndexChanged(index));
-    }
-
     return BlocBuilder<BottomNavigationBloc, BottomNavigationState>(
       builder: (context, state) {
         final currentIndex = state.mapOrNull(
@@ -82,7 +82,7 @@ class BottomNavigationView extends StatelessWidget {
                   currentIndex: currentIndex,
                   selectedItemColor: AppColor.primary,
                   unselectedItemColor: AppColor.silver,
-                  onTap: handleItemTappedCallback,
+                  onTap: (value) => _handleItemTapped(value, context),
                 ),
         );
       },

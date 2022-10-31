@@ -70,10 +70,7 @@ class TrainingWidget extends StatelessWidget {
                           ),
                           Text(
                             '30%',
-                            style: TextStyle(
-                              color: AppColor.white,
-                              fontSize: 10,
-                            ),
+                            style: AppTextStyle.w10,
                           )
                         ],
                       ),

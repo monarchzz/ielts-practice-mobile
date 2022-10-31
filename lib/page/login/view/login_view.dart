@@ -14,20 +14,21 @@ import 'package:ielts_practice_mobile/page/login/view/login_form.dart';
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
+  void _handleRegister() {
+    getIt.navigator.pushNamed(RouteName.signUp);
+  }
+
+  Future<void> _handleLoginSubmit(
+    BuildContext context,
+    String username,
+    String password,
+  ) async {
+    await context.read<LoginCubit>().submit(username, password);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-
-    void handleRegisterCallback() {
-      getIt.navigator.pushNamed(RouteName.signUp);
-    }
-
-    Future<void> handleLoginSubmitCallback(
-      String username,
-      String password,
-    ) async {
-      await context.read<LoginCubit>().submit(username, password);
-    }
 
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
@@ -50,7 +51,11 @@ class LoginView extends StatelessWidget {
                     height: AppSize.s10,
                   ),
                   LoginForm(
-                    onSubmit: handleLoginSubmitCallback,
+                    onSubmit: (username, password) => _handleLoginSubmit(
+                      context,
+                      username,
+                      password,
+                    ),
                   ),
                   const SizedBox(
                     height: AppSize.s6,
@@ -62,7 +67,7 @@ class LoginView extends StatelessWidget {
                         l10n.account,
                       ),
                       TextButton(
-                        onPressed: handleRegisterCallback,
+                        onPressed: _handleRegister,
                         child: Text(
                           l10n.signUpNow,
                           style: const TextStyle(color: Colors.blue),

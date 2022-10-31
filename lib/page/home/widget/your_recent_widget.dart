@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_practice_mobile/common/constant/app_color.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
+import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/page/home/widget/day_steak_widget.dart';
 
@@ -25,11 +26,7 @@ class YourRecentActivity extends StatelessWidget {
               children: [
                 Text(
                   l10.averageSession,
-                  style: const TextStyle(
-                    color: AppColor.silver,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyle.s14,
                 ),
                 const SizedBox(
                   height: AppSize.s6,
@@ -51,11 +48,7 @@ class YourRecentActivity extends StatelessWidget {
                     ),
                     Text(
                       'min of activity',
-                      style: TextStyle(
-                        color: AppColor.primary,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: AppTextStyle.p12,
                     )
                   ],
                 ),
@@ -81,11 +74,7 @@ class YourRecentActivity extends StatelessWidget {
                         children: [
                           Text(
                             l10.daySteak('10'),
-                            style: const TextStyle(
-                              color: AppColor.primary,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: AppTextStyle.p14,
                           ),
                           const SizedBox(
                             height: AppSize.s4,

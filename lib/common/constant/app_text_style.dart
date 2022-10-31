@@ -57,6 +57,12 @@ mixin AppTextStyle {
   );
 
   // white
+  static const w10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    color: AppColor.white,
+  );
+
   static const w12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
@@ -91,5 +97,47 @@ mixin AppTextStyle {
     fontSize: 24,
     fontWeight: FontWeight.w600,
     color: AppColor.white,
+  );
+
+  static const s13 = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    color: AppColor.silver,
+  );
+
+  static const s14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColor.silver,
+  );
+
+  static const s16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColor.silver,
+  );
+
+  static const p10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    color: AppColor.purple,
+  );
+
+  static const p12 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColor.purple,
+  );
+
+  static const p14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColor.purple,
+  );
+
+  static const p24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColor.purple,
   );
 }
