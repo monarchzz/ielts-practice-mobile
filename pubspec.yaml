@@ -23,6 +23,7 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.7.0
   shared_preferences: ^2.0.15
+  tab_indicator_styler: ^2.0.0
 
 dev_dependencies:
   bloc_test: ^9.1.0

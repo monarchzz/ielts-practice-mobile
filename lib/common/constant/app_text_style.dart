@@ -69,9 +69,21 @@ mixin AppTextStyle {
     color: AppColor.white,
   );
 
+  static const w12b = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: AppColor.white,
+  );
+
   static const w14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
+    color: AppColor.white,
+  );
+
+  static const w14b = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
     color: AppColor.white,
   );
 
@@ -97,6 +109,12 @@ mixin AppTextStyle {
     fontSize: 24,
     fontWeight: FontWeight.w600,
     color: AppColor.white,
+  );
+
+  static const s10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    color: AppColor.silver,
   );
 
   static const s13 = TextStyle(

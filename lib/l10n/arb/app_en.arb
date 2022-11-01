@@ -48,6 +48,7 @@
     }
   },
   "continueTitle": "Continue",
+  "start": "Start",
   "welcome": "Welcome!",
   "allYourActivity": "All your activity",
   "totalTime": "Total time",
@@ -70,5 +71,20 @@
   "newStudyProgrammeTitle": "Create a new study programme",
   "newStudyProgrammeDescription": "Set your goals and we'll help you achieve them",
   "allStudyProgramme": "All study programmes",
-  "replay": "Replay"
+  "replay": "Replay",
+  "allExam": "All exam",
+  "allTraining": "All training",
+  "startedOn": "Started on {date} at {time}",
+  "@startedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "tryAgain": "Try again",
+  "viewInstruction": "View instructions"
 }
