@@ -36,6 +36,7 @@
   "studyProgramme": "Study Programme",
   "library": "Library",
   "setting": "Setting",
+  "profile": "Profile",
   "speaking": "Speaking",
   "listening": "Listening",
   "trainingCardTitle": "Your study programme",
@@ -86,5 +87,8 @@
     }
   },
   "tryAgain": "Try again",
-  "viewInstruction": "View instructions"
+  "viewInstruction": "View instructions",
+  "information": "Information",
+  "male": "Male",
+  "female": "Female"
 }

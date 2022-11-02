@@ -22,7 +22,7 @@ Attachment _$AttachmentFromJson(Map<String, dynamic> json) {
 mixin _$Attachment {
   String get id => throw _privateConstructorUsedError;
   String get fileName => throw _privateConstructorUsedError;
-  String get length => throw _privateConstructorUsedError;
+  int get length => throw _privateConstructorUsedError;
   String get contentType => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
@@ -39,11 +39,7 @@ abstract class $AttachmentCopyWith<$Res> {
       _$AttachmentCopyWithImpl<$Res, Attachment>;
   @useResult
   $Res call(
-      {String id,
-      String fileName,
-      String length,
-      String contentType,
-      String url});
+      {String id, String fileName, int length, String contentType, String url});
 }
 
 /// @nodoc
@@ -77,7 +73,7 @@ class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
       length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       contentType: null == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
@@ -99,11 +95,7 @@ abstract class _$$_AttachmentCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String fileName,
-      String length,
-      String contentType,
-      String url});
+      {String id, String fileName, int length, String contentType, String url});
 }
 
 /// @nodoc
@@ -135,7 +127,7 @@ class __$$_AttachmentCopyWithImpl<$Res>
       length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       contentType: null == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
@@ -166,7 +158,7 @@ class _$_Attachment implements _Attachment {
   @override
   final String fileName;
   @override
-  final String length;
+  final int length;
   @override
   final String contentType;
   @override
@@ -214,7 +206,7 @@ abstract class _Attachment implements Attachment {
   factory _Attachment(
       {required final String id,
       required final String fileName,
-      required final String length,
+      required final int length,
       required final String contentType,
       required final String url}) = _$_Attachment;
 
@@ -226,7 +218,7 @@ abstract class _Attachment implements Attachment {
   @override
   String get fileName;
   @override
-  String get length;
+  int get length;
   @override
   String get contentType;
   @override

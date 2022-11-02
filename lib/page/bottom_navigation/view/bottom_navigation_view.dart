@@ -7,7 +7,7 @@ import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/page/bottom_navigation/bloc/bottom_navigation_bloc.dart';
 import 'package:ielts_practice_mobile/page/home/home.dart';
 import 'package:ielts_practice_mobile/page/library/library.dart';
-import 'package:ielts_practice_mobile/page/setting/setting.dart';
+import 'package:ielts_practice_mobile/page/profile/profile.dart';
 import 'package:ielts_practice_mobile/page/study_programme/study_programme.dart';
 
 class BottomNavigationView extends StatelessWidget {
@@ -17,7 +17,7 @@ class BottomNavigationView extends StatelessWidget {
     const HomePage(),
     const StudyProgrammePage(),
     const LibraryPage(),
-    const SettingPage()
+    const ProfilePage()
   ];
 
   void _handleItemTapped(int index, BuildContext context) {
@@ -76,7 +76,7 @@ class BottomNavigationView extends StatelessWidget {
                       icon: const Icon(
                         Icons.settings_outlined,
                       ),
-                      label: l10n.setting,
+                      label: l10n.profile,
                     ),
                   ],
                   currentIndex: currentIndex,

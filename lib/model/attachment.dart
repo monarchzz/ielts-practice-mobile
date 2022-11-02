@@ -8,7 +8,7 @@ class Attachment with _$Attachment {
   factory Attachment({
     required String id,
     required String fileName,
-    required String length,
+    required int length,
     required String contentType,
     required String url,
   }) = _Attachment;

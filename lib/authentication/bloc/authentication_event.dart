@@ -4,8 +4,10 @@ part of 'authentication_bloc.dart';
 class AuthenticationEvent with _$AuthenticationEvent {
   const factory AuthenticationEvent.statusChanged({
     required AuthenticationStatus status,
-  }) = _AuthenticationStatusChangedEvent;
-
+  }) = _AuthenticationStatusChanged;
   const factory AuthenticationEvent.logoutRequested() =
-      _AuthenticationLogoutRequestedEvent;
+      _AuthenticationLogoutRequested;
+  const factory AuthenticationEvent.userUpdated() = _UserUpdated;
+  const factory AuthenticationEvent.avatarUploaded(String path) =
+      _AvatarUpdated;
 }

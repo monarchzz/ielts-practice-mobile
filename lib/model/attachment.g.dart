@@ -10,7 +10,7 @@ _$_Attachment _$$_AttachmentFromJson(Map<String, dynamic> json) =>
     _$_Attachment(
       id: json['id'] as String,
       fileName: json['fileName'] as String,
-      length: json['length'] as String,
+      length: json['length'] as int,
       contentType: json['contentType'] as String,
       url: json['url'] as String,
     );

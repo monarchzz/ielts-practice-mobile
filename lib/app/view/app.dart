@@ -7,6 +7,7 @@ import 'package:ielts_practice_mobile/app/route.dart';
 import 'package:ielts_practice_mobile/app/theme.dart';
 import 'package:ielts_practice_mobile/authentication/bloc/authentication_bloc.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
+import 'package:ielts_practice_mobile/repository/attachment_repository/attachment_repository.dart';
 import 'package:ielts_practice_mobile/repository/authentication_repository/authentication_repository.dart';
 import 'package:ielts_practice_mobile/repository/user_repository/user_repository.dart';
 
@@ -19,6 +20,7 @@ class App extends StatelessWidget {
       value: AuthenticationBloc(
         authenticationRepository: getIt.get<AuthenticationRepository>(),
         userRepository: getIt.get<UserRepository>(),
+        attachmentRepository: getIt.get<AttachmentRepository>(),
       ),
       child: const AppView(),
     );
@@ -57,6 +59,7 @@ class _AppViewState extends State<AppView> {
       routes: AppRoute.routes,
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
+          listenWhen: (previous, current) => previous.status != current.status,
           listener: (context, state) {
             switch (state.status) {
               case AuthenticationStatus.authenticated:
