@@ -90,5 +90,9 @@
   "viewInstruction": "View instructions",
   "information": "Information",
   "male": "Male",
-  "female": "Female"
+  "female": "Female",
+  "unknownError": "unknown Error",
+  "name": "Name",
+  "changePassword": "Change Password",
+  "logout": "Logout"
 }

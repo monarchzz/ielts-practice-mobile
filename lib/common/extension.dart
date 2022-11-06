@@ -15,7 +15,6 @@ extension NavigatorStateX on GetIt {
 extension ApiResponseX on DioError {
   ApiResponse<T> toResponseError<T>() {
     try {
-      print(this);
       final error = Problem.fromJson(response!.data as ObjectResponse);
       return ApiResponse.error(message: error.errors[0].description);
     } catch (e) {
