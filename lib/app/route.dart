@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_practice_mobile/page/bottom_navigation/bottom_navigation.dart';
+import 'package:ielts_practice_mobile/page/change_password/change_password.dart';
 import 'package:ielts_practice_mobile/page/login/login.dart';
 import 'package:ielts_practice_mobile/page/register/sign_up.dart';
 import 'package:ielts_practice_mobile/page/setting/setting.dart';
@@ -14,6 +15,7 @@ mixin AppRoute {
         RouteName.bottomNavigation: (context) => const BottomNavigationPage(),
         RouteName.trainingSession: (context) => const TrainingSessionPage(),
         RouteName.setting: (context) => const SettingPage(),
+        RouteName.changePassword: (context) => const ChangePasswordPage(),
       };
 }
 
@@ -24,4 +26,6 @@ mixin RouteName {
   static const String bottomNavigation = '/bottom-navigation';
   static const String trainingSession = '/bottom-navigation/training-session';
   static const String setting = '/bottom-navigation/setting';
+  static const String changePassword =
+      '/bottom-navigation/setting/change-password';
 }

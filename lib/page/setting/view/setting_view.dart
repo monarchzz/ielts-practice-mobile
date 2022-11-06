@@ -25,7 +25,7 @@ class SettingView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           l10n.setting,
-          style: AppTextStyle.j18b,
+          style: AppTextStyle.j16b,
         ),
         backgroundColor: AppColor.white,
         leading: IconButton(
@@ -86,7 +86,7 @@ class SettingView extends StatelessWidget {
                     height: 10,
                   ),
                   ProfileItem(
-                    onTap: () {},
+                    onTap: _handleChangePassword,
                     hasLeftIcon: false,
                     title: l10n.changePassword,
                   ),
@@ -117,5 +117,9 @@ class SettingView extends StatelessWidget {
     context
         .read<AuthenticationBloc>()
         .add(const AuthenticationEvent.logoutRequested());
+  }
+
+  void _handleChangePassword() {
+    getIt.navigator.pushNamed(RouteName.changePassword);
   }
 }

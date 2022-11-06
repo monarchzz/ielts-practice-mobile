@@ -94,5 +94,10 @@
   "unknownError": "unknown Error",
   "name": "Name",
   "changePassword": "Change Password",
-  "logout": "Logout"
+  "logout": "Logout",
+  "save": "Save",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "confirmNewPassword": "Confirm New Password",
+  "newPasswordSameAsOld": "New password is same as old password"
 }
