@@ -99,5 +99,6 @@
   "currentPassword": "Current Password",
   "newPassword": "New Password",
   "confirmNewPassword": "Confirm New Password",
-  "newPasswordSameAsOld": "New password is same as old password"
+  "newPasswordSameAsOld": "New password is same as old password",
+  "changePasswordSuccess": "Change password success"
 }

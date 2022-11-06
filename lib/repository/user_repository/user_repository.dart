@@ -56,4 +56,26 @@ class UserRepository {
       return e.toResponseError();
     }
   }
+
+  Future<ApiResponse<bool>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      final result = await _dio.put<dynamic>(
+        '/auth/users/change-password',
+        data: {
+          'currentPassword': currentPassword,
+          'newPassword': newPassword,
+        },
+      );
+
+      if (result.statusCode == StatusCodes.status204NoContent) {
+        return const ApiResponse.success(true);
+      }
+      return const ApiResponse.error(message: 'Unknown Error.');
+    } on DioError catch (e) {
+      return e.toResponseError();
+    }
+  }
 }

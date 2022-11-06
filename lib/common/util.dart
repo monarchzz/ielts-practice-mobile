@@ -34,3 +34,27 @@ Future<dynamic> showErrorMessageDialog(String alertTitle, String message) {
     },
   );
 }
+
+Future<dynamic> showMessageDialog(String alertTitle, String message) {
+  return showDialog<String>(
+    context: getIt.navigator.context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text(
+          alertTitle,
+          style: AppTextStyle.j18,
+        ),
+        content: Text(
+          message,
+          style: AppTextStyle.j14,
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'OK'),
+            child: const Text('OK'),
+          ),
+        ],
+      );
+    },
+  );
+}
