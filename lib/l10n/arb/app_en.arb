@@ -106,5 +106,12 @@
   "updateGenderSuccess": "Update gender success",
   "updateDateOfBirthSuccess": "Update date of birth success",
   "ok": "OK",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "listeningSection1": "Section 1 - Short Conversation",
+  "listeningSection2": "Section 2 - Monologue",
+  "listeningSection3": "Section 3 - Long Conversation",
+  "listeningSection4": "Section 4 - Lecture",
+  "speakingPart1": "Part 1 - Introduction and Interview",
+  "speakingPart2": "Part 2 - Individual long turn",
+  "speakingPart3": "Part 3 - Two-way discussion"
 }

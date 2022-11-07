@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ielts_practice_mobile/app/di.dart';
+import 'package:ielts_practice_mobile/app/route.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
 import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
+import 'package:ielts_practice_mobile/common/extension.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
 import 'package:ielts_practice_mobile/model/enum/training_type.dart';
 
@@ -23,6 +26,7 @@ class SessionItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: AppSize.s2),
       child: Card(
+        elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -124,6 +128,6 @@ class SessionItemWidget extends StatelessWidget {
   }
 
   void _handleCardTap() {
-    print('tap');
+    getIt.navigator.pushNamed(RouteName.training, arguments: type);
   }
 }

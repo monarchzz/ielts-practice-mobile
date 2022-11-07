@@ -405,12 +405,11 @@ class _$_GenderChanged implements _GenderChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GenderChanged &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, value);
 
   @JsonKey(ignore: true)
   @override
