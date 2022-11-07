@@ -5,15 +5,15 @@ import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 class ProfileItem extends StatelessWidget {
   const ProfileItem({
     super.key,
-    required this.onTap,
+    this.onTap,
     required this.title,
-    required this.hasLeftIcon,
+    required this.hasIcon,
     this.text,
   });
 
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final String title;
-  final bool hasLeftIcon;
+  final bool hasIcon;
   final String? text;
 
   @override
@@ -40,7 +40,7 @@ class ProfileItem extends StatelessWidget {
                     style: AppTextStyle.j14,
                   ),
                 const SizedBox(width: AppSize.s4),
-                if (hasLeftIcon)
+                if (hasIcon)
                   const Icon(
                     Icons.arrow_forward_ios,
                     size: AppSize.s6,

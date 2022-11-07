@@ -4,6 +4,10 @@ import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 import 'package:ielts_practice_mobile/common/extension.dart';
 import 'package:ielts_practice_mobile/common/widget/loading_dialog.dart';
 
+void navigatorPop() {
+  getIt.navigator.pop();
+}
+
 Future<dynamic> showLoadingDialog() {
   return showDialog<dynamic>(
     context: getIt.navigator.context,

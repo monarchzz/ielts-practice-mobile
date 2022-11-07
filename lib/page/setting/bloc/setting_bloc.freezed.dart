@@ -19,32 +19,50 @@ mixin _$SettingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String firstName, String lastName) nameChanged,
+    required TResult Function(Gender value) genderChanged,
+    required TResult Function(DateTime value) dateOfBirthChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String firstName, String lastName)? nameChanged,
+    TResult? Function(Gender value)? genderChanged,
+    TResult? Function(DateTime value)? dateOfBirthChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String firstName, String lastName)? nameChanged,
+    TResult Function(Gender value)? genderChanged,
+    TResult Function(DateTime value)? dateOfBirthChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_DateOfBirthChanged value) dateOfBirthChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_GenderChanged value)? genderChanged,
+    TResult? Function(_DateOfBirthChanged value)? dateOfBirthChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_DateOfBirthChanged value)? dateOfBirthChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +124,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(String firstName, String lastName) nameChanged,
+    required TResult Function(Gender value) genderChanged,
+    required TResult Function(DateTime value) dateOfBirthChanged,
   }) {
     return started();
   }
@@ -114,6 +135,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(String firstName, String lastName)? nameChanged,
+    TResult? Function(Gender value)? genderChanged,
+    TResult? Function(DateTime value)? dateOfBirthChanged,
   }) {
     return started?.call();
   }
@@ -122,6 +146,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(String firstName, String lastName)? nameChanged,
+    TResult Function(Gender value)? genderChanged,
+    TResult Function(DateTime value)? dateOfBirthChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +161,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_DateOfBirthChanged value) dateOfBirthChanged,
   }) {
     return started(this);
   }
@@ -142,6 +172,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_GenderChanged value)? genderChanged,
+    TResult? Function(_DateOfBirthChanged value)? dateOfBirthChanged,
   }) {
     return started?.call(this);
   }
@@ -150,6 +183,9 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_DateOfBirthChanged value)? dateOfBirthChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,6 +197,456 @@ class _$_Started implements _Started {
 
 abstract class _Started implements SettingEvent {
   const factory _Started() = _$_Started;
+}
+
+/// @nodoc
+abstract class _$$_NameChangedCopyWith<$Res> {
+  factory _$$_NameChangedCopyWith(
+          _$_NameChanged value, $Res Function(_$_NameChanged) then) =
+      __$$_NameChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String firstName, String lastName});
+}
+
+/// @nodoc
+class __$$_NameChangedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$_NameChanged>
+    implements _$$_NameChangedCopyWith<$Res> {
+  __$$_NameChangedCopyWithImpl(
+      _$_NameChanged _value, $Res Function(_$_NameChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstName = null,
+    Object? lastName = null,
+  }) {
+    return _then(_$_NameChanged(
+      null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_NameChanged implements _NameChanged {
+  const _$_NameChanged(this.firstName, this.lastName);
+
+  @override
+  final String firstName;
+  @override
+  final String lastName;
+
+  @override
+  String toString() {
+    return 'SettingEvent.nameChanged(firstName: $firstName, lastName: $lastName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NameChanged &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, firstName, lastName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
+      __$$_NameChangedCopyWithImpl<_$_NameChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String firstName, String lastName) nameChanged,
+    required TResult Function(Gender value) genderChanged,
+    required TResult Function(DateTime value) dateOfBirthChanged,
+  }) {
+    return nameChanged(firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String firstName, String lastName)? nameChanged,
+    TResult? Function(Gender value)? genderChanged,
+    TResult? Function(DateTime value)? dateOfBirthChanged,
+  }) {
+    return nameChanged?.call(firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String firstName, String lastName)? nameChanged,
+    TResult Function(Gender value)? genderChanged,
+    TResult Function(DateTime value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(firstName, lastName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_DateOfBirthChanged value) dateOfBirthChanged,
+  }) {
+    return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_GenderChanged value)? genderChanged,
+    TResult? Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+  }) {
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NameChanged implements SettingEvent {
+  const factory _NameChanged(final String firstName, final String lastName) =
+      _$_NameChanged;
+
+  String get firstName;
+  String get lastName;
+  @JsonKey(ignore: true)
+  _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GenderChangedCopyWith<$Res> {
+  factory _$$_GenderChangedCopyWith(
+          _$_GenderChanged value, $Res Function(_$_GenderChanged) then) =
+      __$$_GenderChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Gender value});
+}
+
+/// @nodoc
+class __$$_GenderChangedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$_GenderChanged>
+    implements _$$_GenderChangedCopyWith<$Res> {
+  __$$_GenderChangedCopyWithImpl(
+      _$_GenderChanged _value, $Res Function(_$_GenderChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$_GenderChanged(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Gender,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GenderChanged implements _GenderChanged {
+  const _$_GenderChanged(this.value);
+
+  @override
+  final Gender value;
+
+  @override
+  String toString() {
+    return 'SettingEvent.genderChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GenderChanged &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GenderChangedCopyWith<_$_GenderChanged> get copyWith =>
+      __$$_GenderChangedCopyWithImpl<_$_GenderChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String firstName, String lastName) nameChanged,
+    required TResult Function(Gender value) genderChanged,
+    required TResult Function(DateTime value) dateOfBirthChanged,
+  }) {
+    return genderChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String firstName, String lastName)? nameChanged,
+    TResult? Function(Gender value)? genderChanged,
+    TResult? Function(DateTime value)? dateOfBirthChanged,
+  }) {
+    return genderChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String firstName, String lastName)? nameChanged,
+    TResult Function(Gender value)? genderChanged,
+    TResult Function(DateTime value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (genderChanged != null) {
+      return genderChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_DateOfBirthChanged value) dateOfBirthChanged,
+  }) {
+    return genderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_GenderChanged value)? genderChanged,
+    TResult? Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+  }) {
+    return genderChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (genderChanged != null) {
+      return genderChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GenderChanged implements SettingEvent {
+  const factory _GenderChanged(final Gender value) = _$_GenderChanged;
+
+  Gender get value;
+  @JsonKey(ignore: true)
+  _$$_GenderChangedCopyWith<_$_GenderChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DateOfBirthChangedCopyWith<$Res> {
+  factory _$$_DateOfBirthChangedCopyWith(_$_DateOfBirthChanged value,
+          $Res Function(_$_DateOfBirthChanged) then) =
+      __$$_DateOfBirthChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$_DateOfBirthChangedCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$_DateOfBirthChanged>
+    implements _$$_DateOfBirthChangedCopyWith<$Res> {
+  __$$_DateOfBirthChangedCopyWithImpl(
+      _$_DateOfBirthChanged _value, $Res Function(_$_DateOfBirthChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$_DateOfBirthChanged(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DateOfBirthChanged implements _DateOfBirthChanged {
+  const _$_DateOfBirthChanged(this.value);
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'SettingEvent.dateOfBirthChanged(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DateOfBirthChanged &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DateOfBirthChangedCopyWith<_$_DateOfBirthChanged> get copyWith =>
+      __$$_DateOfBirthChangedCopyWithImpl<_$_DateOfBirthChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String firstName, String lastName) nameChanged,
+    required TResult Function(Gender value) genderChanged,
+    required TResult Function(DateTime value) dateOfBirthChanged,
+  }) {
+    return dateOfBirthChanged(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String firstName, String lastName)? nameChanged,
+    TResult? Function(Gender value)? genderChanged,
+    TResult? Function(DateTime value)? dateOfBirthChanged,
+  }) {
+    return dateOfBirthChanged?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String firstName, String lastName)? nameChanged,
+    TResult Function(Gender value)? genderChanged,
+    TResult Function(DateTime value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (dateOfBirthChanged != null) {
+      return dateOfBirthChanged(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_DateOfBirthChanged value) dateOfBirthChanged,
+  }) {
+    return dateOfBirthChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_GenderChanged value)? genderChanged,
+    TResult? Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+  }) {
+    return dateOfBirthChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_DateOfBirthChanged value)? dateOfBirthChanged,
+    required TResult orElse(),
+  }) {
+    if (dateOfBirthChanged != null) {
+      return dateOfBirthChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DateOfBirthChanged implements SettingEvent {
+  const factory _DateOfBirthChanged(final DateTime value) =
+      _$_DateOfBirthChanged;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$_DateOfBirthChangedCopyWith<_$_DateOfBirthChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

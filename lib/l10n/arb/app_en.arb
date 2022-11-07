@@ -100,5 +100,11 @@
   "newPassword": "New Password",
   "confirmNewPassword": "Confirm New Password",
   "newPasswordSameAsOld": "New password is same as old password",
-  "changePasswordSuccess": "Change password success"
+  "changePasswordSuccess": "Change password success",
+  "update": "Update",
+  "updateNameSuccess": "Update name success",
+  "updateGenderSuccess": "Update gender success",
+  "updateDateOfBirthSuccess": "Update date of birth success",
+  "ok": "OK",
+  "cancel": "Cancel"
 }
