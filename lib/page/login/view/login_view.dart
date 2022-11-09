@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ielts_practice_mobile/app/di.dart';
 import 'package:ielts_practice_mobile/app/route.dart';
+import 'package:ielts_practice_mobile/common/constant/app_color.dart';
 import 'package:ielts_practice_mobile/common/constant/app_size.dart';
 import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 import 'package:ielts_practice_mobile/common/extension.dart';
@@ -37,6 +38,7 @@ class LoginView extends StatelessWidget {
         }
       },
       child: Scaffold(
+        backgroundColor: AppColor.background,
         body: PageContainer(
           child: Center(
             child: SingleChildScrollView(

@@ -24,6 +24,7 @@ class SettingView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
+      backgroundColor: AppColor.background,
       appBar: AppBar(
         title: Text(
           l10n.setting,

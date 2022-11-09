@@ -25,7 +25,7 @@ enum TrainingType {
 }
 
 extension TrainingTypeX on TrainingType {
-  String getTitle(AppLocalizations l10n) {
+  String getText(AppLocalizations l10n) {
     switch (this) {
       case TrainingType.listeningSection1:
         return l10n.listeningSection1;

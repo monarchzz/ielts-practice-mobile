@@ -37,6 +37,7 @@ class ChangePasswordView extends StatelessWidget {
           )
         ],
       ),
+      backgroundColor: AppColor.background,
       body: Column(
         children: [
           const SizedBox(

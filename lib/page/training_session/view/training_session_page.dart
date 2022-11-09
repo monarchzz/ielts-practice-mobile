@@ -28,6 +28,7 @@ class TrainingSessionPage extends StatelessWidget {
           color: Colors.black,
         ),
       ),
+      backgroundColor: AppColor.background,
       body: session == TrainingSession.listening
           ? const ListeningSessionView()
           : const SpeakingSessionView(),

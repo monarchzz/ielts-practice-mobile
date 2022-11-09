@@ -9,6 +9,12 @@ mixin AppTextStyle {
     color: AppColor.jetBlack,
   );
 
+  static const j13 = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    color: AppColor.jetBlack,
+  );
+
   static const j14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
@@ -157,5 +163,59 @@ mixin AppTextStyle {
     fontSize: 24,
     fontWeight: FontWeight.w600,
     color: AppColor.purple,
+  );
+
+  // orange
+  static const o12 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColor.orange,
+  );
+
+  static const o14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColor.orange,
+  );
+  static const o14b = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AppColor.orange,
+  );
+
+  static const o16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColor.orange,
+  );
+
+  static const o16b = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: AppColor.orange,
+  );
+
+  static const o18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColor.orange,
+  );
+
+  static const o18b = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColor.orange,
+  );
+
+  static const o24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    color: AppColor.orange,
+  );
+
+  static const o24b = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: AppColor.orange,
   );
 }

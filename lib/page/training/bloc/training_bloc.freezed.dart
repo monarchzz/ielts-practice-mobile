@@ -224,7 +224,8 @@ mixin _$TrainingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TrainingType type) success,
+    required TResult Function(TrainingType type, List<Training> trainings)
+        success,
     required TResult Function(String? message) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -232,7 +233,7 @@ mixin _$TrainingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TrainingType type)? success,
+    TResult? Function(TrainingType type, List<Training> trainings)? success,
     TResult? Function(String? message)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -240,7 +241,7 @@ mixin _$TrainingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TrainingType type)? success,
+    TResult Function(TrainingType type, List<Training> trainings)? success,
     TResult Function(String? message)? failure,
     required TResult orElse(),
   }) =>
@@ -329,7 +330,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TrainingType type) success,
+    required TResult Function(TrainingType type, List<Training> trainings)
+        success,
     required TResult Function(String? message) failure,
   }) {
     return initial();
@@ -340,7 +342,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TrainingType type)? success,
+    TResult? Function(TrainingType type, List<Training> trainings)? success,
     TResult? Function(String? message)? failure,
   }) {
     return initial?.call();
@@ -351,7 +353,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TrainingType type)? success,
+    TResult Function(TrainingType type, List<Training> trainings)? success,
     TResult Function(String? message)? failure,
     required TResult orElse(),
   }) {
@@ -442,7 +444,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TrainingType type) success,
+    required TResult Function(TrainingType type, List<Training> trainings)
+        success,
     required TResult Function(String? message) failure,
   }) {
     return loading();
@@ -453,7 +456,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TrainingType type)? success,
+    TResult? Function(TrainingType type, List<Training> trainings)? success,
     TResult? Function(String? message)? failure,
   }) {
     return loading?.call();
@@ -464,7 +467,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TrainingType type)? success,
+    TResult Function(TrainingType type, List<Training> trainings)? success,
     TResult Function(String? message)? failure,
     required TResult orElse(),
   }) {
@@ -522,7 +525,7 @@ abstract class _$$_SuccessCopyWith<$Res> {
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({TrainingType type});
+  $Res call({TrainingType type, List<Training> trainings});
 }
 
 /// @nodoc
@@ -536,12 +539,17 @@ class __$$_SuccessCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? trainings = null,
   }) {
     return _then(_$_Success(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as TrainingType,
+      trainings: null == trainings
+          ? _value._trainings
+          : trainings // ignore: cast_nullable_to_non_nullable
+              as List<Training>,
     ));
   }
 }
@@ -549,14 +557,22 @@ class __$$_SuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success({required this.type});
+  const _$_Success(
+      {required this.type, required final List<Training> trainings})
+      : _trainings = trainings;
 
   @override
   final TrainingType type;
+  final List<Training> _trainings;
+  @override
+  List<Training> get trainings {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_trainings);
+  }
 
   @override
   String toString() {
-    return 'TrainingState.success(type: $type)';
+    return 'TrainingState.success(type: $type, trainings: $trainings)';
   }
 
   @override
@@ -564,11 +580,14 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality()
+                .equals(other._trainings, _trainings));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type);
+  int get hashCode => Object.hash(
+      runtimeType, type, const DeepCollectionEquality().hash(_trainings));
 
   @JsonKey(ignore: true)
   @override
@@ -581,10 +600,11 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TrainingType type) success,
+    required TResult Function(TrainingType type, List<Training> trainings)
+        success,
     required TResult Function(String? message) failure,
   }) {
-    return success(type);
+    return success(type, trainings);
   }
 
   @override
@@ -592,10 +612,10 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TrainingType type)? success,
+    TResult? Function(TrainingType type, List<Training> trainings)? success,
     TResult? Function(String? message)? failure,
   }) {
-    return success?.call(type);
+    return success?.call(type, trainings);
   }
 
   @override
@@ -603,12 +623,12 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TrainingType type)? success,
+    TResult Function(TrainingType type, List<Training> trainings)? success,
     TResult Function(String? message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(type);
+      return success(type, trainings);
     }
     return orElse();
   }
@@ -652,9 +672,12 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements TrainingState {
-  const factory _Success({required final TrainingType type}) = _$_Success;
+  const factory _Success(
+      {required final TrainingType type,
+      required final List<Training> trainings}) = _$_Success;
 
   TrainingType get type;
+  List<Training> get trainings;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
@@ -725,7 +748,8 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TrainingType type) success,
+    required TResult Function(TrainingType type, List<Training> trainings)
+        success,
     required TResult Function(String? message) failure,
   }) {
     return failure(message);
@@ -736,7 +760,7 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TrainingType type)? success,
+    TResult? Function(TrainingType type, List<Training> trainings)? success,
     TResult? Function(String? message)? failure,
   }) {
     return failure?.call(message);
@@ -747,7 +771,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TrainingType type)? success,
+    TResult Function(TrainingType type, List<Training> trainings)? success,
     TResult Function(String? message)? failure,
     required TResult orElse(),
   }) {

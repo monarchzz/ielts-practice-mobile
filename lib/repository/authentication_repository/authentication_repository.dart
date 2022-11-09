@@ -65,6 +65,7 @@ class AuthenticationRepository {
 
       return const ApiError(message: 'Oops! Something went wrong.');
     } on DioError catch (_) {
+      print(_);
       return ApiResponse.error(message: l10n.authInCorrect);
     }
   }

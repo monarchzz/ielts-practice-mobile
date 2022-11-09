@@ -5,7 +5,7 @@ mixin AppColor {
   static const onPrimary = Color(0xFFFFFCFC);
   static const red = Color(0xFFD43860);
   static const gold = Color(0xFFFFCA51);
-  static const background = Color(0xFFfbfbfb);
+  static const background = Color(0xFFFFFFFF);
   // Complementary
   static const ochre = Color(0xFFE39F48);
   static const cream = Color(0xFFFCF4B2);

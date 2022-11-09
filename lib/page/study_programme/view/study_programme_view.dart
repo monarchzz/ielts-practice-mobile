@@ -5,6 +5,7 @@ import 'package:ielts_practice_mobile/common/constant/app_size.dart';
 import 'package:ielts_practice_mobile/common/constant/app_text_style.dart';
 import 'package:ielts_practice_mobile/common/extension.dart';
 import 'package:ielts_practice_mobile/l10n/l10n.dart';
+import 'package:ielts_practice_mobile/model/enum/study_programme_type.dart';
 import 'package:ielts_practice_mobile/model/study_programme.dart';
 import 'package:ielts_practice_mobile/page/study_programme/bloc/study_programme_bloc.dart';
 
@@ -103,7 +104,7 @@ class StudyProgrammeView extends StatelessWidget {
                           height: AppSize.s4,
                         ),
                         Text(
-                          first.type.getName(),
+                          first.type.getText(),
                           style: AppTextStyle.j12,
                         ),
                         const Spacer(),

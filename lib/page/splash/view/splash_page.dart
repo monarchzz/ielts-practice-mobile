@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ielts_practice_mobile/common/constant/app_color.dart';
 import 'package:ielts_practice_mobile/common/widget/page_container.dart';
 
 class SplashPage extends StatelessWidget {
@@ -7,6 +8,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: AppColor.background,
       body: PageContainer(child: Center(child: CircularProgressIndicator())),
     );
   }

@@ -71,6 +71,7 @@ class _SignUpViewState extends State<SignUpView> {
         }
       },
       child: Scaffold(
+        backgroundColor: AppColor.background,
         body: PageContainer(
           child: SingleChildScrollView(
             child: Form(
